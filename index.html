@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchismBox</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+                'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #181818;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 60px 0;
+            border-bottom: 1px solid #333333;
+            background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.4rem; /* Increased font size */
+            color: #d1d1d1;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #333333;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #d1d1d1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #7289da;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #5b6eae;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #888888;
+        }
+
+        footer a {
+            color: #7289da;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #ff4081;
+            font-weight: 700;
+        }
+
+        .event {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .event p {
+            color: #f0f0f0;
+        }
+
+        .event h2 {
+            color: #ff4081;
+        }
+
+        /* About Box Styling */
+        .about-box {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-top: 30px;
+            color: #d1d1d1;
+        }
+
+        .about-box .label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7289da;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            font-size: 1.1rem;
+            color: #d1d1d1;
+        }
+
+        /* New Label Section for IP and Discord */
+        .label-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .label-item {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 45%;
+        }
+
+        .label-item .label {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #7289da;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .label-item h3 {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin: 0;
+        }
+
+        .discord-link {
+            color: #7289da;
+            text-decoration: none;
+        }
+
+        .discord-link:hover {
+            text-decoration: underline;
+        }
+
+        .discord-embed {
+            background-color: #2f3136;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: left;
+        }
+
+        .discord-embed-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .discord-embed-header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .discord-embed-header .username {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .discord-embed-header .timestamp {
+            font-size: 0.9rem;
+            color: #72767d;
+            margin-left: auto;
+        }
+
+        .discord-embed-body {
+            margin-top: 15px;
+        }
+
+        .discord-embed-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #72767d;
+            display: flex;
+            align-items: center;
+        }
+
+        .discord-embed-footer .footer-text {
+            margin-left: 10px;
+        }
+
+        .discord-embed-button {
+            background-color: #7289da;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .discord-embed-button:hover {
+            background-color: #5b6eae;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SchismBox</h1>
+            <p>A world where only your choice limits you.</p>
+        </header>
+
+        <div class="section about-box">
+            <span class="label">About SchismBox</span>
+            <p>SchismBox is one of the best Minecraft servers, offering a unique blend of a paradise world and the thrill of the underground. Explore our beautiful landscapes, or venture into the dark and dangerous underground realms.</p>
+            <p>We host events every week, where players battle it out in the arena for glory and rewards. Are you ready for the challenge?</p>
+        </div>
+
+        <!-- Labels for IP and Discord -->
+        <div class="label-container">
+            <!-- Minecraft Server IP Section -->
+            <div class="label-item">
+                <span class="label">Minecraft Server IP</span>
+                <h3>SchismBox.aternos.me</h3>
+                <!-- Button to go to Discord -->
+                <a href="https://discord.gg/schismbox" class="btn" target="_blank">Connect Now</a>
+            </div>
+
+            <!-- Join Discord Section -->
+            <div class="label-item">
+                <span class="label">Join Our Discord</span>
+                <h3>
+                    <a href="https://discord.gg/schismbox" class="discord-link" target="_blank">discord.gg/schismbox</a>
+                </h3>
+                <a href="https://discord.gg/schismbox" class="btn" target="_blank">Join Discord</a>
+            </div>
+        </div>
+
+        <div class="section event">
+            <h2>Weekly Arena Fights</h2>
+            <p>Every week, SchismBox hosts epic arena battles where players fight for supremacy. Test your skills, earn rewards, and rise to the top of the leaderboard!</p>
+            <p class="highlight">Don’t miss out – the next event is just around the corner!</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 SchismBox. <br> All rights reserved.</p>
+            <p><a href="https://sigma.idfk" target="_blank">Powered by Kremidi - The dev</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
